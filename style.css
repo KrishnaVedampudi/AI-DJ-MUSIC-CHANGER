@@ -1,0 +1,13 @@
+#song_name
+{
+  font-size:25px;
+  text-align: center;
+  text-shadow: 5px 5px 5px pink;
+  font-weight: bold;
+  font-style: italic;
+  font-variant: small-caps;
+  background-size:cover;
+}
+.btn{
+    font-size:15px;
+}
