@@ -47,17 +47,29 @@ function draw()
     image(video, 0, 0, 500, 500);
     fill("red");
     stroke("red");
-    
-    if(scoreLeftWrist > 0.4)
+    var fded = faded.isPlaying();
+    var theme = hptheme.isPlaying();
+
+    if(scoreLeftWrist > 0.4 && theme == false)
     {
         circle(leftWristX, leftWristY, 20);
-        faded.stop();
-        var one = faded.isPlaying();
-        var two = hptheme.isPlaying();
-        if(one == false)
+        faded.stop();       
+        if(fded == false)
         {
             hptheme.play();
             document.getElementById('song_name').innerHTML = 'Harry Potter Theme Song(Original Version) is playing now';        }
+    }
+    if(scoreRightWrist > 0.4 && fded == false)
+    {
+        circle(rightWristX, rightWristY, 20);
+        hptheme.stop(); 
+    
+        if(theme == false)
+        {
+            faded.play();
+            document.getElementById('song_name').innerHTML = 'Faded Song(Original Version) is playing now';    
+        }
+        
     }
     
 }
